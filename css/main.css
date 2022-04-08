@@ -259,6 +259,21 @@ img {
     transition: 0.2s;
 }
 
+/*Transiciones*/
+
+img:hover {
+    transform: scale(102%);
+}
+
+.submitBoton:hover {
+    background-color: #3674f1;
+}
+
+nav ul li a:hover{
+    background-color: #3161c9;
+    border-radius: 1px;
+}
+
 /*Media queries*/
 
 @media only screen and (min-width: 425px) {
