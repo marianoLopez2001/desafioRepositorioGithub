@@ -1,0 +1,338 @@
+/*reset*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*contenedor grid*/
+
+.contenedor {
+    display: grid;
+    grid-template-areas: "header"
+                         "main"
+                         "nosotros"
+                         "tendencias"
+                         "recienAgregados"
+                         "instrucciones"
+                         "contacto"
+                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 2.5% 23.8% 6% auto auto 5% 15% auto;
+}
+
+/*inicio de header - contiene logo y menu de navegacion (flex) */
+
+header{
+    position: fixed;
+    left: 0%;
+    width: 100%;
+    background-color: #242f3d;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+    z-index: 5;
+}
+
+nav {
+    visibility: hidden;
+}
+
+.logo a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    margin-left: 10px;
+}
+
+nav ul li{
+    color: white;
+    display: inline-block;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    padding: 25px 15px;
+    transition: 0.2s;
+}
+
+/*Inicio de main (catalogo)*/
+
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-flow: row wrap;
+    grid-area: main;
+}
+
+/*Imagenes que se van a mostrar con media queries mas tarde*/
+
+.hide1 {
+    display: none;
+}
+
+.hide2 {
+    display: none;
+}
+
+/*inicio de sobe nosotros*/
+
+#nosotros{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #242f3d;
+    grid-area: nosotros;
+}
+
+h1 {
+    color: white;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+#nosotros p{
+    text-align: center;
+    color: white;
+    font-size: 0.7rem;
+    width: 500px;
+}
+
+/*Inicio de tendencias*/
+
+.tendencias{
+    text-align: center;
+    grid-area: tendencias;
+    border-bottom: 1px solid black;
+
+}
+
+/*Inicio de recien agregados*/
+
+.recienAgregados{
+    text-align: center;
+    grid-area: recienAgregados;
+}
+
+/*botones siguiente-anterior-etc*/
+
+.botones {
+    margin: 20px;
+}
+
+.botones p{
+    background-color: #3161c9;
+    display: inline-block;
+    padding: 10px 12px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Inicio de instrucciones*/
+
+.instrucciones{
+    background-color: #242f3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: instrucciones;
+    letter-spacing: 2px;
+}
+
+/*inicio de contacto*/
+
+.contacto{
+    grid-area: contacto;
+    color: white;
+    text-align: center;
+}
+
+/*formulario de contacto*/
+.contacto {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+}
+form {
+    display: inline-block;
+    padding: 40px;
+    background-color:#242f3d;
+    text-align: start;
+    border-radius: 3px;
+}
+
+form h5 {
+    text-align: center;
+    font-size: 17px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+input {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: #242f3d;
+    color: white;
+    border: 2px solid #3161c9; /* #52a8ff color azul */
+}
+
+.submitBoton {
+    text-align: center;
+    background-color: #1955cb;
+    width: 90%;
+    border: none;
+    padding: 5px 20px;
+}
+
+/*Inicio de footer*/
+
+footer{
+    background-color: #242f3d;
+    grid-area: footer;    
+}
+
+.footerArriba {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.copy {
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+footer p {
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+h4 {
+    color: white;
+    font-size: 25px;
+}
+
+h2, h3{
+    font-size: 25px;
+    text-align: center;
+    margin: 40px;
+    color: black;
+}
+
+.logoIndex a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: xx-large;
+}
+
+.footerArriba h6 {
+    text-align: center;
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.contactanos, .redes {
+    margin: 10px;
+}
+
+img {
+    margin: 5px;
+    transition: 0.2s;
+}
+
+/*Media queries*/
+
+@media only screen and (min-width: 425px) {
+    .contenedor {
+        grid-template-rows: 2.5% 23.8% 6% auto auto 5% 15% auto;
+    }
+    nav {
+        visibility: visible;
+    }
+    nav a{
+        font-size: 0.8rem;
+        padding: 1.4rem 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .catalogo img {
+        width: 340px;
+    }
+    .hide1 {
+        display: initial;
+    }
+    nav a{
+        font-size: 15px;
+        padding: 25px 15px;
+    }
+    
+    .contenedor {
+        grid-template-rows: 2.5% 32% 6% auto auto 5% 15% auto;
+    }
+    .footerArriba {
+        justify-content: space-around;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    header {
+        justify-content: space-evenly;
+    }
+    nav a{
+        font-size: 20px;
+    }
+    .catalogo img {
+        width: 240px;
+    }
+    .contenedor {
+        grid-template-rows: 2.6% 13.6% 8% auto auto 5% 15% auto;
+    }
+    #nosotros p {
+        font-size: 1rem;
+        width: 600px;
+    }
+    .hide2 {
+        display: initial;
+    }
+}
+
+@media only screen and (min-width: 1180px) {
+    .catalogo img {
+        width: 280px;
+    }
+    .contenedor {
+        grid-template-rows: 2.6% 15.5% 8% auto auto 5% 15% auto;
+    }
+
+}
+
+@media only screen and (min-width: 1440px) {
+    .catalogo img {
+        width: 345px;
+    }
+    .contenedor {
+        grid-template-rows: 2.6% 18.5% 8% auto auto 5% 15% auto;
+    }
+
+}
